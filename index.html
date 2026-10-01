@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes EcoRuta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="contenedor-formulario">
+<div class="cabecera">
+<h2>Gestión de Reportes EcoRuta</h2>
+<p>Ayúdanos a mantener nuestras rutas limpias y seguras</p>
+</div>
+    <form id="formularioEcoRuta">
+    
+            <div class="grupo-input">
+<label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+            </div>
+            
+<div class="grupo-input">
+                <label for="email">Correo Electrónico de Contacto</label>
+                <input type="email" id="email" name="email" placeholder="juan@correo.com" required>
+            </div>
+
+        
+<div class="grupo-input">
+                <label>Dirección Exacta del Reporte</label>
+                <div class="direccion-grid">
+                    <select id="tipo_via" name="tipo_via" required>
+                        <option value="" disabled selected>Vía...</option>
+                        <option value="Calle">Calle (Cl.)</option>
+                        <option value="Carrera">Carrera (Cra.)</option>
+                        <option value="Diagonal">Diagonal (Diag.)</option>
+                        <option value="Transversal">Manzana (Mz.)</option>
+                        <option value="Transversal">Transversal (Tv.)</option>
+                        <option value="Avenida">Avenida (Av.)</option>
+                        <option value="Avenida Calle">Av. Calle</option>
+                        <option value="Avenida Carrera">Av. Carrera</option>
+                    </select>
+                    
+                    <input type="text" id="num_via" name="numero_via" placeholder="Ej: 14" required>
+                    
+                    <span class="separador">#</span>
+                    
+                    <input type="text" id="num_cruce" name="numero_cruce" placeholder="Ej: 22" required>
+                    
+                    <span class="separador">-</span>
+                    
+                    <input type="text" id="num_placa" name="numero_placa" placeholder="Ej: 10" required>
+                </div>
+            </div>
+
+            <div class="grupo-input">
+                <label for="complemento">Barrio y Detalles de Ubicación</label>
+                <input type="text" id="complemento" name="barrio_complemento" placeholder="Ej: Barrio Centro, frente al parque..." required>
+            </div>
+
+            
+            <div class="dos-columnas">
+                <div class="grupo-input">
+                    <label for="tipo_problema">Clasificación del Problema</label>
+                    <select id="tipo_problema" name="tipo_problema" required>
+                        <option value="" disabled selected>¿Qué reportas?</option>
+                        <option value="ambiental">Alerta Ambiental</option>
+                        <option value="infraestructura">Problema en la Vía</option>
+                        <option value="software">Fallo en la App EcoRuta</option>
+                    </select>
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="detalle_problema">Detalle Específico</label>
+                    <select id="detalle_problema" name="detalle_problema" disabled required>
+                        <option value="" disabled selected>Primero selecciona el problema</option>
+                    </select>
+                </div>
+            </div>
+
+                        <div class="grupo-input">
+                <label for="sugerencias">Descripción adicional o Sugerencias</label>
+                <textarea id="sugerencias" name="sugerencias" placeholder="Describe brevemente la situación..." maxlength="300" rows="3" required></textarea>
+                <div class="contador-caracteres"><span id="contador">0</span>/300 caracteres</div>
+            </div>
+            
+            <button type="submit" class="btn-enviar" id="btnEnviar">Enviar Reporte</button>
+        </form>
+        <div id="mensajeSistema" class="oculto"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
